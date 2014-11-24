@@ -15,7 +15,6 @@ damjan@samuraiprinciple.com
 @returnthis
 
 
-
 IIFE
 ---
 angular.prefix:
@@ -45,7 +44,6 @@ angular.suffix:
 ````
 
 
-
 Revealing module pattern
 ---
 
@@ -69,7 +67,6 @@ describe('Module pattern', function () {
 ````
 
 
-
 (One) Solution
 ---
 
@@ -86,8 +83,6 @@ var colorLookup;
   };
 }());
 ````
-
-
 
 
 Scope.prototype.$new
@@ -175,7 +170,6 @@ function annotate(fn) {
 ````
 
 
-
 Function as a result
 ---
 
@@ -189,6 +183,45 @@ function $ExceptionHandlerProvider() {
 }
 ````
 
+
+Function.prototype.log
+---
+
+````javascript
+angular.module('MyApp')
+  .service('loginService', function (rpcService) {
+    'use strict';
+    var self = this;
+    self.login = function (username, password) {
+      return rpcService.invokeAsync(
+        'LoginService',
+        { username: username, password: password},
+      ).then(
+        function () {
+          // do something
+        }.log('success'),
+        function () {
+          // do something
+        }.log('failure')
+      );
+    };
+  });
+````
+
+
+(One) Solution
+---
+
+````javascript
+Function.prototype.log = function () {
+  'use strict';
+  var fn = this, args = Array.prototype.slice.apply(arguments);
+  return function () {
+    console.log.apply(console, Array.prototype.concat.apply(args, arguments));
+    return fn.apply(undefined, arguments);
+  };
+};
+````
 
 
 JavaScript HashMap
@@ -218,7 +251,6 @@ HashMap.prototype = {
   }
 };
 ````
-
 
 
 Hash function
