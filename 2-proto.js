@@ -80,7 +80,7 @@ describe('prototype', function () {
     var parentScope = {
         depositAmount: 100,
         deposit: {
-          amount: 100
+          Amount: 100
         }
       },
       createChildScope = function (parentScope) {
@@ -97,10 +97,10 @@ describe('prototype', function () {
     expect(parentScope.depositAmount).toBe(__);
     expect(childScope.depositAmount).toBe(__);
 
-    expect(parentScope.deposit.amount).toBe(__);
-    expect(childScope.deposit.amount).toBe(__);
-    childScope.deposit.amount = 200;
-    expect(parentScope.deposit.amount).toBe(__);
-    expect(childScope.deposit.amount).toBe(__);
+    expect(parentScope.deposit.Amount).toBe(__);
+    expect(childScope.deposit.Amount).toBe(__);
+    childScope.deposit.Amount = 200;
+    expect(parentScope.deposit.Amount).toBe(__);
+    expect(childScope.deposit.Amount).toBe(__);
   });
 });
