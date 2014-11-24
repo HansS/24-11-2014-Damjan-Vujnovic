@@ -67,14 +67,14 @@ describe('prototype', function () {
     }, firstInstance, secondInstance;
     Scope.prototype.depositAmount = 100;
     Scope.prototype.deposit = {
-      amount: 100
+      Amount: 100
     };
     firstInstance = new Scope();
     secondInstance = new Scope();
     firstInstance.depositAmount = 200;
-    firstInstance.deposit.amount = 200;
+    firstInstance.deposit.Amount = 200;
     expect(secondInstance.depositAmount).toBe(__);
-    expect(secondInstance.deposit.amount).toBe(__);
+    expect(secondInstance.deposit.Amount).toBe(__);
   });
   it('7 - should understand prototypes - angularjs scopes (Scope.prototype.$new)', function () {
     var parentScope = {
