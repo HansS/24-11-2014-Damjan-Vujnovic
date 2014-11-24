@@ -2,14 +2,6 @@ window.__ = 'Fill this value in so the test is passing';
 Function.prototype.log = function () {
   //TODO
 };
-Function.prototype.log = function () {
-  'use strict';
-  var fn = this, args = Array.prototype.slice.apply(arguments);
-  return function () {
-    console.log.apply(console, Array.prototype.concat.apply(args, arguments));
-    return fn.apply(undefined, arguments);
-  };
-};
 describe('Function.prototype.log', function () {
   var myFn, myFnWithLogging;
   beforeEach(function () {
