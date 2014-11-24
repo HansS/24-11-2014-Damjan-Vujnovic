@@ -1,4 +1,4 @@
-A few quick JS ideas
+A few JavaScript ideas
 ===
 shamelessly stolen from Angular source code
 ---
@@ -15,7 +15,7 @@ damjan@samuraiprinciple.com
 @returnthis
 
 
-IIFE
+IIFE (+Grunt)
 ---
 angular.prefix:
 ````javascript
@@ -48,7 +48,8 @@ Revealing module pattern
 ---
 
 ````javascript
-//refactor this so that object with mapping is not created every time (i.e. it is created at most once)
+//refactor this so that object with mapping is not created every time
+//(i.e. it may be created at most once)
 //however, make sure nothing else goes into global namespace (except colourLookup function)
 var colourLookup = function (colourString) {
   return {
