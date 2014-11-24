@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>A few quick JS ideas</title>
+		<meta name="description" content="Advanced JavaScript Workshop" />
+		<meta name="author" content="Damjan Vujnovic" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="lib/reveal.js/css/reveal.min.css" />
+		<link rel="stylesheet" href="lib/reveal.js.custom/reveal.css" />
+		<link rel="stylesheet" href="lib/reveal.js/css/theme/beige.css" id="theme" />
+		<link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css" />
+		<script>
+			document.write('<link rel="stylesheet" href="lib/reveal.js/css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown="slides.md" data-separator="^\n\n"></section>
+			</div>
+		</div>
+		<script src="lib/reveal.js/lib/js/head.min.js"></script>
+		<script src="lib/reveal.js/js/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				margin: 0,
+				controls: false,
+				progress: true,
+				history: true,
+				center: false,
+				dependencies: [
+					{ src: 'lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'lib/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
